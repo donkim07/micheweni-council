@@ -1,0 +1,1106 @@
+/**
+ * Admin Tables Responsive CSS
+ * This file contains styles to make admin tables responsive on different screen sizes
+ */
+
+/* Base responsive table styles for all screen sizes */
+.table-responsive {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  max-width: 100%;
+  margin-bottom: 1rem;
+}
+
+/* Ensure tables take full width of their container */
+.table-responsive .table {
+  width: 100%;
+  margin-bottom: 0;
+}
+
+/* Government dashboard stat cards styling */
+.admin-government-dashboard .stat-card {
+  height: 100% !important;
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.admin-government-dashboard .stat-card .card-body {
+  padding: 1.5rem !important;
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-government-dashboard .stat-card .d-flex {
+  margin-bottom: 1rem;
+}
+
+.admin-government-dashboard .stat-card .btn {
+  margin-top: auto;
+  padding: 0.5rem 1rem;
+}
+
+.admin-government-dashboard .col-xl-3,
+.admin-government-dashboard .col-md-6 {
+  padding: 0.75rem;
+}
+
+.admin-government-dashboard .dashboard-row {
+  margin-left: -0.75rem;
+  margin-right: -0.75rem;
+  margin-bottom: 1rem;
+}
+
+.admin-government-dashboard .icon-box {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Small desktop / 90% zoom level responsiveness (for screens between 900px and 1199px) */
+@media (min-width: 900px) and (max-width: 1199px) {
+  /* Reduce padding in cells to fit more content */
+  .table th, .table td {
+    padding: 0.5rem !important;
+    font-size: 0.9rem;
+  }
+  
+  /* Make action buttons more compact */
+  .table .btn-sm {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.75rem;
+  }
+  
+  /* Ensure action buttons don't wrap but stay in a single row */
+  .table .btn-action-group, 
+  .table .btn-group {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 2px;
+  }
+  
+  /* Allow text to break to prevent overflow */
+  .table td {
+    word-break: break-word;
+  }
+
+  /* Dashboard specific fixes */
+  .dashboard-table-container {
+    overflow-x: auto;
+    width: 100%;
+  }
+  
+  .dashboard-table {
+    min-width: 100%;
+    table-layout: fixed;
+  }
+  
+  /* Make sure dashboard tables fit without overflow */
+  .dashboard-recent-tables {
+    width: 100%;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow-x: hidden !important;
+  }
+  
+  .dashboard-recent-tables .table {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  
+  /* Ensure dashboard filter buttons don't overflow */
+  .dashboard-filters {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 5px;
+  }
+  
+  .dashboard-filters .btn-sm {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.75rem;
+  }
+  
+  /* Government dashboard stat cards at 90% zoom */
+  .admin-government-dashboard .stat-card .card-body {
+    padding: 1rem !important;
+  }
+  
+  .admin-government-dashboard .icon-box {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .admin-government-dashboard .stat-value {
+    font-size: 1.8rem !important;
+  }
+}
+
+/* Desktop zoom responsiveness (for screens between 992px and 1199px or zoomed) */
+@media (min-width: 992px) and (max-width: 1199px) {
+  /* Reduce padding in cells to fit more content */
+  .table th, .table td {
+    padding: 0.5rem !important;
+  }
+  
+  /* Make action buttons more compact */
+  .table .btn-sm {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.75rem;
+  }
+  
+  /* Ensure action buttons don't wrap but stay in a single row */
+  .table .btn-action-group, 
+  .table .btn-group {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 2px;
+  }
+  
+  /* Allow text to break to prevent overflow */
+  .table td {
+    word-break: break-word;
+  }
+}
+
+/* Tablet view (768px - 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+  .table-responsive {
+    overflow-x: auto;
+    border: 0;
+  }
+  
+  /* Improved tablet table layout */
+  .table-responsive .table {
+    width: 100%;
+    display: table;
+    table-layout: auto;
+  }
+  
+  /* Make all columns more compact */
+  .table-responsive .table th,
+  .table-responsive .table td {
+    padding: 0.5rem !important;
+    font-size: 0.875rem;
+  }
+  
+  /* Make sure important columns have enough width */
+  .table-responsive .table th:first-child,
+  .table-responsive .table td:first-child {
+    min-width: 150px;
+  }
+  
+  /* Keep action column compact */
+  .table-responsive .table th:last-child,
+  .table-responsive .table td:last-child {
+    min-width: 120px;
+    width: 120px;
+  }
+  
+  /* Compact action buttons */
+  .table-responsive .table .btn-sm {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.75rem;
+  }
+  
+  /* Force button groups to stay in a row */
+  .table-responsive .table .btn-group {
+    flex-wrap: nowrap;
+    gap: 2px;
+  }
+  
+  /* Ensure buttons don't have too much margin */
+  .table-responsive .table .btn {
+    margin: 0 1px;
+  }
+  
+  /* Word breaking for text content */
+  .table-responsive .table td:not(:last-child) {
+    word-break: break-word;
+  }
+  
+  /* Improved tablet card view */
+  .tablet-card-view .table {
+    display: block;
+    width: 100%;
+  }
+  
+  .tablet-card-view .table tbody tr {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+    border: 1px solid rgba(0,0,0,0.125);
+    border-radius: 0.25rem;
+    background-color: #fff;
+  }
+  
+  .tablet-card-view .table tbody tr td {
+    flex: 1 1 70%;
+    padding: 0.75rem !important; 
+    border-bottom: 1px solid rgba(0,0,0,0.075);
+    font-size: 0.9rem;
+    overflow: visible;
+  }
+  
+  .tablet-card-view .table tbody tr td:last-child {
+    flex: 1 0 25%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border-left: 1px solid rgba(0,0,0,0.075);
+    padding: 0.5rem !important;
+  }
+  
+  .tablet-card-view .table tbody tr td:last-child .btn-group,
+  .tablet-card-view .table tbody tr td:last-child .btn-action-group {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 3px;
+  }
+  
+  /* Hide headers in tablet card view */
+  .tablet-card-view .table thead {
+    display: none;
+  }
+  
+  /* Dashboard fixes for tablet */
+  .chart-container {
+    min-height: 300px !important;
+    width: 100% !important;
+  }
+  
+  .card-header .btn-group {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  /* Fix for dashboard filter dropdown */
+  .dashboard-filter-dropdown .dropdown-menu {
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  /* Dashboard specific table fixes for tablet */
+  .dashboard-recent-tables {
+    overflow-x: hidden !important;
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  
+  .dashboard-recent-tables .table {
+    width: 100% !important;
+    min-width: 100% !important;
+  }
+  
+  /* Apply tablet card view to dashboard tables */
+  .dashboard-recent-tables.tablet-card-view .table tbody tr {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+    border: 1px solid rgba(0,0,0,0.125);
+    border-radius: 0.25rem;
+  }
+  
+  .dashboard-recent-tables.tablet-card-view .table tbody tr td {
+    flex: 1 1 50%;
+    padding: 0.75rem !important;
+    border-bottom: 1px solid rgba(0,0,0,0.075);
+  }
+  
+  .dashboard-recent-tables.tablet-card-view .table tbody tr td:last-child {
+    flex: 1 0 100%;
+    display: flex;
+    justify-content: center;
+    padding: 0.75rem !important;
+    border-left: none;
+  }
+  
+  /* Government dashboard stat cards on tablet */
+  .admin-government-dashboard .col-md-6 {
+    width: 50%;
+  }
+  
+  .admin-government-dashboard .stat-card .card-body {
+    padding: 1rem !important;
+  }
+  
+  .admin-government-dashboard .icon-box {
+    width: 45px;
+    height: 45px;
+  }
+  
+  .admin-government-dashboard .stat-value {
+    font-size: 1.5rem !important;
+  }
+  
+  .admin-government-dashboard .stat-card .btn {
+    padding: 0.4rem 0.75rem;
+    font-size: 0.8rem;
+  }
+}
+
+/* Mobile view (under 768px) */
+@media (max-width: 767px) {
+  /* Fix clumped tables that are small and left-aligned with extra space */
+  .table-responsive {
+    width: 100% !important;
+    margin: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  
+  .table-responsive .table {
+    width: 100% !important;
+    margin: 0 !important;
+    table-layout: fixed !important;
+  }
+  
+  /* Card layout for mobile */
+  .mobile-card-view .table,
+  .mobile-card-view .table thead,
+  .mobile-card-view .table tbody,
+  .mobile-card-view .table tfoot,
+  .mobile-card-view .table tr {
+    display: block;
+    width: 100%;
+  }
+  
+  .mobile-card-view .table th,
+  .mobile-card-view .table td {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .mobile-card-view .table thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  
+  .mobile-card-view .table tr {
+    margin-bottom: 1rem;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: 0.25rem;
+  }
+  
+  .mobile-card-view .table td {
+    position: relative;
+    padding-left: 50% !important;
+    text-align: right;
+    min-height: 40px;
+    border-top: none !important;
+    border-bottom: 1px solid rgba(0,0,0,.075);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    word-break: break-word;
+  }
+  
+  /* Fix overflow issues */
+  .mobile-card-view .table td div {
+    max-width: 100%;
+    word-wrap: break-word;
+    word-break: break-word;
+    overflow: visible !important;
+  }
+  
+  /* Fix image + text combinations */
+  .mobile-card-view .table td .d-flex {
+    display: block !important;
+    text-align: right;
+  }
+  
+  .mobile-card-view .table td .d-flex img {
+    float: right;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    max-height: 50px;
+    width: auto !important;
+  }
+  
+  .mobile-card-view .table td .d-flex .me-3 {
+    margin-right: 0 !important;
+    margin-bottom: 0.5rem;
+    float: right;
+    clear: both;
+  }
+  
+  /* Fix icon boxes with text next to them */
+  .mobile-card-view .table td .d-flex .icon-box {
+    float: right;
+    margin-left: 10px;
+    margin-bottom: 10px;
+  }
+  
+  /* Avoid text being behind the data-label */
+  .mobile-card-view .table td > span,
+  .mobile-card-view .table td > div,
+  .mobile-card-view .table td > p {
+    margin-left: -15% !important;
+    max-width: 115% !important;
+    display: inline-block;
+  }
+  
+  /* Last cell gets special treatment */
+  .mobile-card-view .table td:last-child {
+    border-bottom: none;
+  }
+  
+  /* Show column label */
+  .mobile-card-view .table td:before {
+    content: attr(data-label);
+    position: absolute;
+    left: 0.75rem;
+    width: 45%;
+    padding-right: 10px;
+    text-align: left;
+    font-weight: 600;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  
+  /* Better handling of action buttons on mobile */
+  .mobile-card-view .table td:last-child {
+    display: flex;
+    padding: 0.75rem !important;
+    justify-content: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    text-align: center;
+  }
+  
+  /* Fix for action title overlapping buttons */
+  .mobile-card-view .table td:last-child:before {
+    position: relative;
+    display: block;
+    width: 100%;
+    left: 0;
+    margin-bottom: 0.5rem;
+    text-align: center;
+    padding-right: 0;
+  }
+  
+  /* Keep action buttons reasonably sized */
+  .mobile-card-view .table .btn-sm {
+    padding: 0.375rem 0.75rem;
+    margin: 0.15rem;
+  }
+  
+  /* Fix for dashboard tables */
+  .dashboard-table-container {
+    overflow-x: auto;
+    display: block;
+    width: 100%;
+  }
+  
+  .dashboard-table {
+    min-width: 100%;
+    table-layout: fixed;
+  }
+  
+  .dashboard-table td {
+    word-break: break-word;
+    white-space: normal;
+  }
+  
+  /* Fix for Portal Activity filters that overflow */
+  .dashboard-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    justify-content: center;
+  }
+  
+  .dashboard-filters .btn-group {
+    margin-bottom: 5px;
+  }
+  
+  /* Specific fixes for dashboard tables */
+  .dashboard-recent-tables {
+    overflow-x: visible !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: block !important; 
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+  
+  .dashboard-recent-tables .table {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    display: table !important;
+    table-layout: fixed !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+  
+  .dashboard-recent-tables .table td {
+    padding: 0.75rem !important;
+    display: block !important;
+    width: 100% !important;
+    text-align: right !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: relative !important;
+    clear: both !important;
+  }
+  
+  .dashboard-recent-tables .table td:before {
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: capitalize;
+    position: relative !important;
+    left: 0 !important;
+    width: auto !important;
+    visibility: visible !important;
+    display: block !important;
+    opacity: 1 !important;
+  }
+  
+  .dashboard-recent-tables .table td .d-flex {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    text-align: right !important;
+    width: 100% !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+  
+  .dashboard-recent-tables .table td .btn-group {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    justify-content: flex-end !important;
+    width: 100% !important;
+    margin-top: 0.5rem !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+  
+  .dashboard-recent-tables .table td .btn {
+    margin: 0 2px !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+  
+  /* Fix for tables that don't work well with the card view by forcing them back to table view */
+  .mobile-card-view .force-table-view {
+    display: table !important;
+    width: 100% !important;
+  }
+  
+  .mobile-card-view .force-table-view thead,
+  .mobile-card-view .force-table-view tbody,
+  .mobile-card-view .force-table-view tr {
+    display: table-row-group !important;
+    width: 100% !important;
+  }
+  
+  .mobile-card-view .force-table-view tr {
+    display: table-row !important;
+    border: none !important;
+    margin-bottom: 0 !important;
+  }
+  
+  .mobile-card-view .force-table-view td,
+  .mobile-card-view .force-table-view th {
+    display: table-cell !important;
+    width: auto !important;
+    padding: 0.5rem !important;
+    text-align: left !important;
+    border-bottom: 1px solid rgba(0,0,0,.075) !important;
+  }
+  
+  .mobile-card-view .force-table-view td:before {
+    content: none !important;
+  }
+  
+  /* Government dashboard stat cards on mobile */
+  .admin-government-dashboard .col-md-6 {
+    width: 100%;
+    padding: 0.5rem;
+  }
+  
+  .admin-government-dashboard .stat-card {
+    margin-bottom: 1rem;
+  }
+  
+  .admin-government-dashboard .stat-card .card-body {
+    padding: 1rem !important;
+  }
+  
+  .admin-government-dashboard .icon-box {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .admin-government-dashboard .stat-value {
+    font-size: 1.5rem !important;
+  }
+  
+  .admin-government-dashboard .text-muted {
+    font-size: 0.9rem;
+  }
+  
+  .admin-government-dashboard .stat-card .btn {
+    padding: 0.4rem 0.75rem;
+    font-size: 0.8rem;
+    margin-top: 0.75rem;
+  }
+  
+  .admin-government-dashboard .dashboard-row {
+    margin-left: -0.5rem;
+    margin-right: -0.5rem;
+  }
+}
+
+/* Specific fixes for known tables */
+/* Fix for table layouts that look small and clumped */
+@media (max-width: 767px) {
+  .table-responsive table {
+    table-layout: fixed;
+    width: 100% !important;
+  }
+  
+  /* Permissions table fix */
+  .admin-permissions-table td:first-child {
+    word-break: break-word;
+    overflow-wrap: break-word;
+    max-width: 100%;
+  }
+  
+  .admin-permissions-table td:first-child .icon-box {
+    float: right;
+    margin-left: 10px;
+  }
+  
+  /* Fix for form submissions table */
+  .admin-form-submissions-table td:first-child,
+  .admin-categories-table td:first-child,
+  .admin-news-table td:first-child,
+  .admin-roles-table td:first-child {
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+  
+  /* Department table styling */
+  #departmentsList .handle {
+    width: 40px !important;
+  }
+  
+  /* Force normal display layout for critical content */
+  .mobile-card-view .table td.no-transform {
+    padding-left: 0.75rem !important;
+    text-align: left;
+  }
+  
+  /* Dashboard fixes */
+  .dashboard-card {
+    width: 100% !important;
+  }
+  
+  .chart-container {
+    width: 100% !important;
+    height: auto !important;
+    min-height: 300px;
+    margin-bottom: 2rem;
+  }
+  
+  /* Fix tables where images and text are combined and flowing outside their container */
+  .table td .d-flex {
+    flex-wrap: wrap !important;
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
+  }
+  
+  .table td .d-flex img.img-thumbnail {
+    max-width: 40px !important;
+    height: auto !important;
+  }
+  
+  .table td .d-flex div {
+    flex: 1 1 auto !important;
+    min-width: 0 !important;
+    word-break: break-word !important;
+  }
+  
+  /* Fix for handling long words in text cells */
+  .table td .fw-medium,
+  .table td strong,
+  .table td span:not(.badge) {
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+    max-width: 100% !important;
+  }
+}
+
+/* Service table styling */
+@media (max-width: 991px) {
+  #servicesList .handle {
+    width: 40px !important;
+  }
+  
+  /* Fix for long titles in headers */
+  .card-title {
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+}
+
+/* Status badge adjustments */
+@media (max-width: 767px) {
+  .table .badge {
+    padding: 0.4rem 0.75rem;
+    font-size: 0.75rem;
+  }
+}
+
+/* Helper class for hiding less important columns on different screens */
+@media (max-width: 991px) {
+  .table .hide-md {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .table .hide-sm {
+    display: none;
+  }
+}
+
+/* Improve table navigation */
+.table-navigation {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+/* Fix for buttons in table cells */
+.table .btn-action-group {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  gap: 2px !important;
+  justify-content: flex-end !important;
+  min-width: 100px !important;
+}
+
+/* Fix for consistent button styling across all tables */
+.table .btn {
+  margin: 2px !important;
+}
+
+.table .btn-sm {
+  padding: 0.25rem 0.5rem !important;
+}
+
+.table .btn i,
+.table .btn .fas,
+.table .btn .far {
+  margin-right: 4px !important;
+}
+
+/* Ensure modals don't get affected by overflow properties */
+.modal {
+  overflow: hidden !important;
+}
+
+/* Dashboard specific fixes */
+.stat-card {
+  margin-bottom: 1rem;
+}
+
+.dashboard-stat-card {
+  height: auto !important;
+}
+
+/* Special fix for dashboard tables */
+.dashboard-recent-tables .table {
+  width: 100%;
+  display: table;
+}
+
+.dashboard-recent-tables .table td {
+  word-break: break-word;
+  white-space: normal;
+  max-width: 300px;
+}
+
+.dashboard-recent-tables .table th {
+  white-space: nowrap;
+}
+
+/* Force tables to have a horizontal scroll when needed */
+.dashboard-scroll-table {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.dashboard-scroll-table .table {
+  min-width: 500px;
+}
+
+/* Dashboard table specific fixes */
+.dashboard-table {
+  width: 100% !important;
+  table-layout: fixed;
+}
+
+.dashboard-table-desktop {
+  font-size: 0.9rem;
+}
+
+.dashboard-table-desktop th,
+.dashboard-table-desktop td {
+  padding: 0.5rem !important;
+}
+
+/* Make sure cards don't overlap each other */
+.card {
+  margin-bottom: 1.5rem;
+}
+
+/* Fix for dashboard tables */
+.dashboard-table-responsive {
+  overflow: visible !important;
+  max-width: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* Fix for dashboard tables at 90% zoom */
+@media (min-width: 900px) and (max-width: 1199px) {
+  .dashboard-table-responsive {
+    overflow-x: auto !important;
+    width: 100%;
+  }
+  
+  .dashboard-table-responsive table {
+    width: 100% !important;
+  }
+  
+  .dashboard-recent-tables .table th, 
+  .dashboard-recent-tables .table td {
+    font-size: 0.85rem;
+    padding: 0.4rem !important;
+  }
+  
+  .dashboard-recent-tables .table .btn-sm {
+    padding: 0.2rem 0.4rem;
+    font-size: 0.75rem;
+  }
+}
+
+/* Fix for tables with whitespace on the right */
+.table-responsive {
+  width: 100% !important;
+  overflow-x: auto !important;
+}
+
+.table {
+  width: 100% !important;
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+}
+
+/* Fixing card-body padding but maintaining it for tables */
+.card-body .table-responsive {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+/* Only remove padding from table containers, not all card-body elements */
+.card-body:not(.main-content) {
+  padding: 1.5rem !important;
+}
+
+.card .table-responsive {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+/* Fix for dashboard cards overlapping */
+.row > .col-12 > .card {
+  margin-bottom: 2rem !important;
+}
+
+/* Fix for dashboard tables on mobile */
+@media (max-width: 767px) {
+  .dashboard-recent-tables {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+  
+  .dashboard-recent-tables .table {
+    display: table !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+  
+  .dashboard-recent-tables .table thead,
+  .dashboard-recent-tables .table tbody,
+  .dashboard-recent-tables .table tr,
+  .dashboard-recent-tables .table th,
+  .dashboard-recent-tables .table td {
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+  
+  .stat-card .card-body {
+    padding: 1rem;
+  }
+  
+  .stat-value {
+    font-size: 1.5rem !important;
+  }
+  
+  .dashboard-row {
+    display: block !important;
+  }
+  
+  .dashboard-row > div {
+    width: 100% !important;
+    margin-bottom: 1rem;
+  }
+  
+  /* Fix government dashboard spacing */
+  .admin-government-dashboard .row > div {
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Fix charts on both dashboards */
+  .admin-dashboard .chart-container,
+  .admin-government-dashboard .chart-container {
+    min-height: 250px;
+    height: auto !important;
+  }
+  
+  /* Fix dashboard filter buttons */
+  .card-header .btn-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    justify-content: flex-start;
+  }
+}
+
+/* Make action buttons consistent across all tables */
+.table .btn-group-sm > .btn, 
+.table .btn-sm {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+  border-radius: 0.2rem;
+}
+
+.table .btn-outline-primary,
+.table .btn-outline-secondary,
+.table .btn-outline-info,
+.table .btn-outline-danger,
+.table .btn-outline-success,
+.table .btn-outline-warning {
+  margin: 0.125rem;
+}
+
+.table .btn i {
+  margin-right: 0.25rem;
+}
+
+/* Specific fix for mobile view */
+@media (max-width: 767px) {
+    .mobile-card-view .table td:last-child {
+        display: flex !important;
+        justify-content: flex-end !important;
+        padding-top: 0.75rem !important;
+        padding-bottom: 0.75rem !important;
+        border-top: none !important;
+        position: relative !important;
+        z-index: 50 !important;
+    }
+    
+    .mobile-card-view .table td:last-child .btn-group,
+    .mobile-card-view .table td:last-child .btn-action-group {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        gap: 4px !important;
+        width: auto !important;
+        position: relative !important;
+        z-index: 100 !important;
+    }
+    
+    .mobile-card-view .table td:last-child .btn {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        min-width: 36px !important;
+        height: 36px !important;
+        padding: 0.25rem 0.5rem !important;
+        margin: 0 2px !important;
+        position: relative !important;
+        z-index: 200 !important;
+        pointer-events: auto !important;
+    }
+    
+    /* Fix modal positioning for delete confirmations */
+    .modal {
+        z-index: 1060 !important;
+    }
+    
+    /* Ensure buttons in modals work properly */
+    .modal .btn {
+        margin: 0 0.25rem !important;
+    }
+    
+    /* Special fixes for problematic pages */
+    .admin-users-table .btn-action-group,
+    .admin-roles-table .btn-action-group,
+    .admin-permissions-table .btn-action-group,
+    .admin-pages-table .btn-action-group,
+    .mobile-card-view .table .btn-action-group {
+        position: relative !important;
+        z-index: 500 !important;
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        gap: 4px !important;
+        isolation: isolate !important;
+    }
+    
+    .admin-users-table .btn-action-group .btn,
+    .admin-roles-table .btn-action-group .btn,
+    .admin-permissions-table .btn-action-group .btn,
+    .admin-pages-table .btn-action-group .btn,
+    .mobile-card-view .table .btn-action-group .btn {
+        position: relative !important;
+        z-index: 600 !important;
+        pointer-events: auto !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        min-width: 36px !important;
+        height: 36px !important;
+    }
+    
+    /* Force buttons to be clickable */
+    .btn-action-group {
+        isolation: isolate !important;
+        position: relative !important;
+        z-index: 500 !important;
+    }
+    
+    .btn-action-group .btn {
+        isolation: isolate !important;
+        position: relative !important;
+        z-index: 600 !important;
+        pointer-events: auto !important;
+    }
+} 

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .card {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 10px 15px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        pre {
+            background-color: #f5f5f5;
+            padding: 10px;
+            border-radius: 4px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>API Test Page</h1>
+    
+    <div class="card">
+        <h2>Test API Endpoint</h2>
+        <button id="testBtn">Test API</button>
+        <div id="testResult"></div>
+    </div>
+    
+    <div class="card">
+        <h2>Google Maps API Key</h2>
+        <button id="apiKeyBtn">Get API Key</button>
+        <div id="apiKeyResult"></div>
+    </div>
+    
+    <script>
+        document.getElementById('testBtn').addEventListener('click', async function() {
+            const resultDiv = document.getElementById('testResult');
+            resultDiv.innerHTML = '<p>Loading...</p>';
+            
+            try {
+                const baseUrl = window.location.origin;
+                const response = await fetch(`${baseUrl}/api/test`);
+                const data = await response.json();
+                
+                resultDiv.innerHTML = `
+                    <p>Status: ${response.ok ? 'Success' : 'Failed'}</p>
+                    <p>Status Code: ${response.status}</p>
+                    <pre>${JSON.stringify(data, null, 2)}</pre>
+                `;
+            } catch (error) {
+                resultDiv.innerHTML = `
+                    <p>Error: ${error.message}</p>
+                `;
+            }
+        });
+        
+        document.getElementById('apiKeyBtn').addEventListener('click', async function() {
+            const resultDiv = document.getElementById('apiKeyResult');
+            resultDiv.innerHTML = '<p>Loading...</p>';
+            
+            try {
+                const baseUrl = window.location.origin;
+                const response = await fetch(`${baseUrl}/api/google-maps-api-key`);
+                const data = await response.json();
+                
+                // Hide the actual API key for security
+                const displayData = {...data};
+                if (displayData.api_key) {
+                    const keyLength = displayData.api_key.length;
+                    displayData.api_key = displayData.api_key.substring(0, 4) + '*'.repeat(keyLength - 8) + displayData.api_key.substring(keyLength - 4);
+                }
+                
+                resultDiv.innerHTML = `
+                    <p>Status: ${response.ok ? 'Success' : 'Failed'}</p>
+                    <p>Status Code: ${response.status}</p>
+                    <pre>${JSON.stringify(displayData, null, 2)}</pre>
+                `;
+            } catch (error) {
+                resultDiv.innerHTML = `
+                    <p>Error: ${error.message}</p>
+                `;
+            }
+        });
+    </script>
+</body>
+</html> 

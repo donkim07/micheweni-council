@@ -1,0 +1,201 @@
+/* 
+ * MICHEWENI WASTE PORTAL - Dashboard Stylesheet
+ * ----------------------------------
+ * Specific styles for the admin dashboard
+ */
+
+.bg-primary-soft {
+    background-color: rgba(52, 152, 219, 0.1);
+}
+
+.bg-success-soft {
+    background-color: rgba(39, 174, 96, 0.1);
+}
+
+.bg-info-soft {
+    background-color: rgba(52, 152, 219, 0.1);
+}
+
+.bg-warning-soft {
+    background-color: rgba(243, 156, 18, 0.1);
+}
+
+.bg-danger-soft {
+    background-color: rgba(231, 76, 60, 0.1);
+}
+
+.text-primary {
+    color: #3498db !important;
+}
+
+.text-success {
+    color: #27ae60 !important;
+}
+
+.text-info {
+    color: #3498db !important;
+}
+
+.text-warning {
+    color: #f39c12 !important;
+}
+
+.text-danger {
+    color: #e74c3c !important;
+}
+
+.avatar-sm {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: #3498db;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.chart-container {
+    position: relative;
+    margin: auto;
+    height: 350px;
+}
+
+.badge {
+    padding: 0.5rem 1rem;
+    font-weight: 500;
+}
+
+.btn-group .btn {
+    border-radius: 0;
+}
+
+.btn-group .btn:first-child {
+    border-top-left-radius: 0.375rem;
+    border-bottom-left-radius: 0.375rem;
+}
+
+.btn-group .btn:last-child {
+    border-top-right-radius: 0.375rem;
+    border-bottom-right-radius: 0.375rem;
+}
+
+/* Dashboard Cards */
+.stat-card {
+    transition: all 0.3s ease;
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    height: 100%;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.stat-card .icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1rem;
+}
+
+.stat-card .value {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 0.25rem;
+}
+
+.stat-card .label {
+    font-size: 0.875rem;
+    color: #6c757d;
+}
+
+/* News Items */
+.news-item {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.news-item:hover {
+    background-color: rgba(52, 152, 219, 0.02);
+}
+
+.news-item:last-child {
+    border-bottom: none;
+}
+
+.news-item .category {
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.25rem 0.75rem;
+    border-radius: 50px;
+    display: inline-block;
+    margin-bottom: 0.5rem;
+}
+
+.news-item .title {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.news-item .excerpt {
+    font-size: 0.875rem;
+    color: #6c757d;
+    margin-bottom: 1rem;
+}
+
+/* Page List */
+.page-item {
+    transition: all 0.2s ease;
+}
+
+.page-item:hover {
+    background-color: rgba(52, 152, 219, 0.02);
+}
+
+.page-item .page-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1rem;
+    background-color: #f8f9fa;
+}
+
+.page-item .page-title {
+    font-weight: 600;
+}
+
+.page-item .page-meta {
+    font-size: 0.875rem;
+    color: #6c757d;
+}
+
+/* Empty State */
+.empty-state {
+    padding: 3rem;
+    text-align: center;
+}
+
+.empty-state .icon {
+    font-size: 3rem;
+    color: #adb5bd;
+    margin-bottom: 1rem;
+}
+
+.empty-state .message {
+    font-size: 1rem;
+    color: #6c757d;
+    margin-bottom: 1.5rem;
+} 

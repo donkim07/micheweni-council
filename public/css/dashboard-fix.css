@@ -1,0 +1,298 @@
+/**
+ * Dashboard emergency fixes for visibility issues
+ */
+
+/* Reset conflicting CSS properties */
+body .container-fluid {
+    visibility: visible !important;
+    opacity: 1 !important;
+    display: block !important;
+}
+
+body .row {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+body .col-xl-3, 
+body .col-md-6, 
+body .col-lg-6, 
+body .col-xl-4,
+body .col-xl-8,
+body .col-lg-7,
+body .col-lg-5,
+body .col-12,
+body .col-xl-12 {
+    visibility: visible !important;
+    opacity: 1 !important;
+    display: block !important;
+    position: relative !important;
+}
+
+body .card {
+    visibility: visible !important;
+    opacity: 1 !important;
+    display: block !important;
+    position: relative !important;
+    z-index: auto !important;
+    overflow: visible !important;
+    background-color: #fff !important;
+}
+
+body .card-header {
+    visibility: visible !important;
+    opacity: 1 !important;
+    display: block !important;
+    background-color: #fff !important;
+}
+
+body .card-body {
+    visibility: visible !important;
+    opacity: 1 !important;
+    display: block !important;
+    background-color: #fff !important;
+}
+
+body .table {
+    visibility: visible !important;
+    opacity: 1 !important;
+    display: table !important;
+    width: 100% !important;
+    border-collapse: separate !important;
+    border-spacing: 0 !important;
+}
+
+body .table thead {
+    visibility: visible !important;
+    opacity: 1 !important;
+    display: table-header-group !important;
+}
+
+body .table tbody {
+    visibility: visible !important;
+    opacity: 1 !important;
+    display: table-row-group !important;
+}
+
+body .table tr {
+    visibility: visible !important;
+    opacity: 1 !important;
+    display: table-row !important;
+}
+
+body .table th, 
+body .table td {
+    visibility: visible !important;
+    opacity: 1 !important;
+    display: table-cell !important;
+}
+
+/* Fix for icon boxes */
+body .icon-box {
+    visibility: visible !important;
+    opacity: 1 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: auto !important;
+    height: auto !important;
+}
+
+/* Fix for stats cards */
+body .display-6 {
+    visibility: visible !important;
+    opacity: 1 !important;
+    display: block !important;
+}
+
+body .progress {
+    visibility: visible !important;
+    opacity: 1 !important;
+    display: flex !important;
+    height: 5px !important;
+    overflow: hidden !important;
+    background-color: #e9ecef !important;
+    border-radius: 0.25rem !important;
+}
+
+body .progress-bar {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    overflow: hidden !important;
+    color: #fff !important;
+    text-align: center !important;
+    white-space: nowrap !important;
+    background-color: #007bff !important;
+    transition: width 0.6s ease !important;
+}
+
+/* Fix for charts */
+body .chart-container {
+    position: relative !important;
+    margin: auto !important;
+    height: 350px !important;
+    min-height: 350px !important;
+    width: 100% !important;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+body canvas {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+/* Emergency reset for any Z-index issues */
+body {
+    z-index: auto !important;
+}
+
+#page-content-wrapper {
+    z-index: auto !important;
+    position: relative !important;
+}
+
+#sidebar-wrapper {
+    z-index: 1031 !important;
+}
+
+body .sidebar-overlay {
+    z-index: 1030 !important;
+}
+
+/* Ensure lists display properly */
+body .list-group,
+body .list-group-item,
+body .list-group-flush {
+    visibility: visible !important;
+    opacity: 1 !important;
+    display: block !important;
+    position: relative !important;
+}
+
+/* Fix for any overflow issues */
+body .container-fluid,
+body .card,
+body .card-body,
+body .main-content,
+body #page-content-wrapper {
+    overflow: visible !important;
+}
+
+/* Mobile-specific table fixes */
+@media (max-width: 767px) {
+    /* Dashboard table container fix */
+    .dashboard-recent-tables {
+        overflow-x: visible !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        display: block !important;
+    }
+    
+    /* Fix table display */
+    .dashboard-recent-tables .table {
+        width: 100% !important;
+        border-collapse: separate !important;
+        border-spacing: 0 !important;
+        margin-bottom: 1rem !important;
+        color: #212529 !important;
+        display: block !important;
+    }
+    
+    /* Hide table header on mobile */
+    .dashboard-recent-tables .table thead {
+        position: absolute !important;
+        width: 1px !important;
+        height: 1px !important;
+        padding: 0 !important;
+        overflow: hidden !important;
+        clip: rect(0, 0, 0, 0) !important;
+        white-space: nowrap !important;
+        border: 0 !important;
+    }
+    
+    /* Table rows as cards */
+    .dashboard-recent-tables .table tbody {
+        display: block !important;
+    }
+    
+    .dashboard-recent-tables .table tr {
+        display: block !important;
+        margin-bottom: 1rem !important;
+        background-color: #fff !important;
+        border-radius: 0.375rem !important;
+        box-shadow: 0 2px 5px rgba(0,0,0,.1) !important;
+        border: 1px solid rgba(0,0,0,.125) !important;
+        overflow: hidden !important;
+    }
+    
+    /* Cell styling */
+    .dashboard-recent-tables .table td {
+        position: relative !important;
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        padding: 0.75rem 1rem !important;
+        border-bottom: 1px solid rgba(0,0,0,.05) !important;
+        text-align: right !important;
+    }
+    
+    .dashboard-recent-tables .table td:last-child {
+        border-bottom: none !important;
+    }
+    
+    /* Label for each cell */
+    .dashboard-recent-tables .table td:before {
+        content: attr(data-label) !important;
+        font-weight: bold !important;
+        text-align: left !important;
+        padding-right: 1rem !important;
+        flex: 0 0 40% !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+    }
+    
+    /* Fix for flex layout in cells */
+    .dashboard-recent-tables .table td .d-flex {
+        flex: 1 !important;
+        justify-content: flex-end !important;
+    }
+    
+    /* Fix for action buttons */
+    .dashboard-recent-tables .table td[data-label="Actions"],
+    .dashboard-recent-tables .table td[data-label="Actions"] {
+        padding: 0.5rem 1rem !important;
+        justify-content: center !important;
+    }
+    
+    .dashboard-recent-tables .table td[data-label="Actions"]:before,
+    .dashboard-recent-tables .table td[data-label="Actions"]:before {
+        display: none !important;
+    }
+    
+    .dashboard-recent-tables .table td .btn-group {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        gap: 0.25rem !important;
+    }
+    
+    /* Fix for badges */
+    .dashboard-recent-tables .table .badge {
+        white-space: nowrap !important;
+    }
+    
+    /* Fix text wrapping in cells */
+    .dashboard-recent-tables .table td > div > div,
+    .dashboard-recent-tables .table td > span,
+    .dashboard-recent-tables .table td > div > strong {
+        max-width: 100% !important;
+        word-break: break-word !important;
+        overflow-wrap: break-word !important;
+    }
+} 

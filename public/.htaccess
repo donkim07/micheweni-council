@@ -1,0 +1,91 @@
+<IfModule mod_rewrite.c>
+
+    Options -Indexes
+    # Redirect to homepage, uncomment in production with real domain
+    ErrorDocument 403 https://micheweni-portal.wastemanagementportal.co.tz
+
+    <IfModule mod_negotiation.c>
+        Options -MultiViews
+    </IfModule>
+
+    <IfModule mod_brotli.c>
+            # Compress the same MIME types as in your Deflate config
+            AddOutputFilterByType BROTLI_COMPRESS text/html
+            AddOutputFilterByType BROTLI_COMPRESS application/vnd.api+json
+            AddOutputFilterByType BROTLI_COMPRESS text/css
+            AddOutputFilterByType BROTLI_COMPRESS text/javascript
+            AddOutputFilterByType BROTLI_COMPRESS text/xml
+            AddOutputFilterByType BROTLI_COMPRESS text/plain
+            AddOutputFilterByType BROTLI_COMPRESS image/x-icon
+            AddOutputFilterByType BROTLI_COMPRESS image/svg+xml
+            AddOutputFilterByType BROTLI_COMPRESS application/rss+xml
+            AddOutputFilterByType BROTLI_COMPRESS application/javascript
+            AddOutputFilterByType BROTLI_COMPRESS application/x-javascript
+            AddOutputFilterByType BROTLI_COMPRESS application/xml
+            AddOutputFilterByType BROTLI_COMPRESS application/xhtml+xml
+            AddOutputFilterByType BROTLI_COMPRESS application/x-font
+            AddOutputFilterByType BROTLI_COMPRESS application/x-font-truetype
+            AddOutputFilterByType BROTLI_COMPRESS application/x-font-ttf
+            AddOutputFilterByType BROTLI_COMPRESS application/x-font-otf
+            AddOutputFilterByType BROTLI_COMPRESS application/x-font-opentype
+            AddOutputFilterByType BROTLI_COMPRESS application/vnd.ms-fontobject
+            AddOutputFilterByType BROTLI_COMPRESS font/ttf
+            AddOutputFilterByType BROTLI_COMPRESS font/otf
+            AddOutputFilterByType BROTLI_COMPRESS font/opentype
+
+            # For older browsers that do not support Brotli
+            BrowserMatch ^Mozilla/4 gzip-only-text/html
+            BrowserMatch ^Mozilla/4\.0[678] no-gzip
+            BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
+        </IfModule>
+
+    RewriteEngine On
+
+    Header add Access-Control-Allow-Origin "*"
+    Header add Access-Control-Allow-Methods: "GET,POST,OPTIONS"
+    Header add Access-Control-Allow-Headers: "Content-Type, Authorization, X-XSRF-TOKEN"
+    Header add Access-Control-Expose-Headers: "Authorization"
+
+    # All requests to https (optional, comment/uncomment the below statements if no SSL is installed)
+    # RewriteCond %{HTTPS} !=on
+    # This checks to make sure the connection is not already HTTPS
+
+    # RewriteRule ^/?(.*) https://%{SERVER_NAME}/$1 [R,L]
+    # This rule will redirect users from their original location, to the same location but using HTTPS.
+    # i.e.  http://www.example.com/foo/ to https://www.example.com/foo/
+    # The leading slash is made optional so that this will work either in httpd.conf
+    # or .htaccess context
+
+    # IMPORTANT: for Google Login to work, set the redirect URI accordingly
+
+    # Redirect Trailing Slashes If Not A Folder...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)/$ /$1 [L,R=301]
+
+    # Handle Front Controller...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.php [L]
+
+    # Handle Authorization Header
+    RewriteCond %{HTTP:Authorization} .
+    RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
+    # Add your apache alias and uncomment if the installation is not in the root directory
+    # Usually the home page will work, but not the login page.
+    # If calling the login page with the index.php in the url works, the rewrite base is the cause
+    # RewriteBase /{apache_alias}
+
+    # For PHP 8+
+    <IfModule mod_php.c>
+        # PHP value limits
+        php_value memory_limit 5000M
+        php_value max_execution_time 5000
+        php_value upload_max_filesize 500M
+        php_value post_max_size 600M
+    </IfModule>
+
+    # Uncomment and set the below if the installation is not in the root folder
+    # RewriteBase /folder/
+
+</IfModule>
