@@ -2,7 +2,7 @@
 
     Options -Indexes
     # Redirect to homepage, uncomment in production with real domain
-    ErrorDocument 403 https://micheweni-portal.wastemanagementportal.co.tz
+    ErrorDocument 403 https://micheweni-portal.rejoda.co.tz
 
     <IfModule mod_negotiation.c>
         Options -MultiViews
